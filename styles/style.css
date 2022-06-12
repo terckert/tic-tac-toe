@@ -1,0 +1,65 @@
+:root {
+    
+    /* Game board */
+    --game-board-space-dimension: 100px;
+    --game-border-thickness: 2px;
+    --game-border-color: black;
+    --game-board-style: solid;
+    --game-board-font-size: 4.5em
+}
+
+.board-row {
+    display: flex;
+}
+
+.board-space {     
+    height: var(--game-board-space-dimension);
+    width: var(--game-board-space-dimension);
+    font-size: var(--game-board-font-size);
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.top, .middle {
+    border-bottom: var(--game-border-thickness) var(--game-border-color) var(--game-board-style);
+} 
+
+.middle, .lower {
+    border-top: var(--game-border-thickness) var(--game-border-color) var(--game-board-style);
+}
+
+.left, .center {
+    border-right: var(--game-border-thickness) var(--game-border-color) var(--game-board-style)
+}
+
+.right, .center {
+    border-left: var(--game-border-thickness) var(--game-border-color) var(--game-board-style)
+}
+
+
+/* Footer stuff */
+footer {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: var(--button-normal-background);
+}
+
+footer > span {
+    padding-right: .5em;
+}
+
+#github-logo {
+    transition: transform 0.2s ease-in-out;
+}
+
+#github-logo:hover {
+    transform: rotate(-360deg) scale(1.1);
+}
