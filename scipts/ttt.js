@@ -1,14 +1,30 @@
-const Player = (character, numberOfWins) => {
-    const incrementWins = () => { this.numberOfWins++ }
+/**
+ * 
+ * @param {string} name 
+ * @param {string} character 
+ * @param {number} numberOfWins
+ * @returns 
+ */
+const Player = (name, character, numberOfWins) => {
+    const incrementWins = () => numberOfWins++
+    // Getters
+    const getName = () => name
+    const getNumberOfWins = () => numberOfWins
+    const getCharacter = () => character
+    // Setters
+    const setName = newName => name = newName
 
     return {
-        character, 
-        numberOfWins,
+        getName, 
+        getNumberOfWins,
+        getCharacter,
+        setName,
         incrementWins
     }
 }
 
-let tim = Player('tim', 0)
-console.log(`${tim.character} ${tim.numberOfWins}`)
+let tim = Player('tim', 'x', 0)
+console.log(`${tim.getName()} ${tim.getNumberOfWins()}`)
 tim.incrementWins()
-console.log(`${tim.character} ${tim.numberOfWins}`)
+tim.setName('timothy')
+console.log(`${tim.getName()} ${tim.getNumberOfWins()}`)
